@@ -16,7 +16,10 @@
 		<p>ID</p>
 		<input type="text" name="userid" value="${vo.userid}" class="form-control" readonly>
 		
-		<p>ENTER YOUR PASSWORD</p>
+		<p>현재 비밀번호</p>
+		<input type="password" name="oldpw" class="form-control">
+		
+		<p>NEW YOUR PASSWORD</p>
 		<input type="password" name="userpw" class="form-control">
 		
 

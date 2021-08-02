@@ -249,20 +249,26 @@ public class UserController {
 
 	@RequestMapping(value = "/myinfo", method = { RequestMethod.POST })
 	public String myinfoPOST(@ModelAttribute MyUsers vo,
-			@RequestParam(value = "userpw") String userpw,
-			@RequestParam(value = "username") String username,
-			@RequestParam(value = "email") String email) {
-		vo.getUsername();
-		vo.getEmail();
-//		 암호 변경해서 vo에 다시 넣음
+			@RequestParam(value = "oldpw") String oldpw,
+			@RequestParam(value = "userid") String userid) {
 		BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
-		String changePw = bcpe.encode(vo.getUserpw());
-		vo.setUserpw(changePw);
-
-		uRepository.save(vo);
+		
+		MyUsers user = uRepository.findByUserid(userid);
+		
+		if(bcpe.matches(oldpw, user.getUserpw())) {
+			String changePw = bcpe.encode(vo.getUserpw());
+			
+			user.setUserpw(changePw);
+			
+			uRepository.save(user);
+				
+		}
+		else{
+			System.out.println("붊일치");
+		}
 
 		// 페이지 이동
-		return "redirect:/main";
+		return "redirect:/user/myinfo?menu=1";
 	}
 	
 	@RequestMapping(value = "/content_list")
