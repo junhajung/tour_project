@@ -1,0 +1,117 @@
+@font-face {
+	font-family: BUNGEESHADE;
+	src: url('../fonts/BUNGEESHADE-REGULAR.TTF');
+}
+
+@font-face {
+	font-family: 'ghanachoco';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "Cafe24Ssurround";
+}
+
+li.add-list {
+    z-index: 1 !important;
+}
+
+
+.video-container {
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+}
+
+#background_video {
+	z-index: -1;
+	width: 100vw;
+	position: absolute;
+}
+
+@media screen and (max-aspect-ratio: 3/2) {
+	#background_video {
+		width: auto;
+		height: 100vh;
+	}
+}
+
+.logo {
+	font-family: "BUNGEESHADE";
+	font-size: 5rem;
+	color: #01477a;
+	width: max-content;
+}
+
+@media ( max-width : 990px) {
+	.logo {
+		font-size: 4rem;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.header-area .main-header .main-menu ul li a {
+		padding: 39px !important;
+	}
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+.header-area .main-header .main-menu ul li a {
+    font-weight: 500 !important;  
+    font-size: 19px !important;
+    padding: 39px !important;
+}
+
+.slider-area form.search-box .input-form input {
+	font-size: 15px !important;
+}
+
+.search-form input {
+	width: 100%;
+	height: 60px;
+	background: #ff3d1c;
+	font-size: 20px;
+	line-height: 1;
+	text-align: center;
+	color: #fff;
+	display: block;
+	padding: 15px;
+	border-radius: 0px;
+	text-transform: capitalize;
+	line-height: 31px;
+	font-size: 15px;
+	border: none;
+}
+
+ul {
+	text-align: center;
+}
+
+.fa, .fab, .fal, .far, .fas {
+    display: block !important;
+    margin-block-end: 5px;
+}
+
+.slider-height {
+    min-height: 0 !important;
+    padding-top: 230px !important;
+}

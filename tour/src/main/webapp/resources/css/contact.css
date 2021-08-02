@@ -1,0 +1,268 @@
+.titleType1 {
+	text-align: center;
+	position: relative;
+	padding: 40px 150px 40px;
+	border-bottom: 1px solid #e6e6e6;
+}
+
+.titleType1 h2 {
+	padding: 19px 0 0;
+	text-align: center;
+	margin: 0;
+}
+
+.tit_cont h2, .titleType1 h2 {
+	overflow: hidden;
+	font-weight: 800;
+	color: #333;
+	font-size: 40px;
+	letter-spacing: -1px;
+	word-break: keep-all;
+}
+
+.titleType1 .area_address {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+.titleType1 .area_address span {
+	float: left;
+	font-size: 20px;
+	color: #666;
+}
+
+.titleType1 .area_address span+span:before {
+	content: '';
+	display: inline-block;
+	width: 1px;
+	height: 14px;
+	background: #ccc;
+	margin: 0 10px;
+	vertical-align: -2px;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+#map {
+	height: 650px;
+	width: 100%;
+}
+
+body {
+	overflow: hidden;
+}
+
+div.wrap {
+	width: 200px;
+}
+
+div.text-box {
+	text-align: center;
+}
+
+h4 {
+	margin: 10px auto 0;
+}
+
+div.img-box {
+	max-height: 200px;
+	overflow: hidden;
+}
+
+img {
+	width: 150px;
+	margin: -20px auto 0;
+}
+
+.gmnoprint, .gm-control-active.gm-fullscreen-control {
+	display: none;
+}
+
+.imtext {
+	position: absolute;
+	top: 62px; 
+	left : 90px;
+	z-index: 1;
+	color: white;
+	font-size: 25px;
+	width: 120px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.course_detail .cos_cont.active {
+	display: block;
+}
+
+#cursor_test {
+	cursor: pointer;
+}
+
+#ballon {
+	position: relative;
+	border-radius: 10px;
+}
+
+#ballon:after {
+	border-top: 0px solid transparent;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #e6e6e6;
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: 200px;
+}
+
+.list-img:hover {
+	width: 100%;
+	height: 220px;
+	opacity: 1;
+	border-radius: 6px;
+}
+
+@font-face {
+	font-family: BUNGEESHADE;
+	src: url('../fonts/BUNGEESHADE-REGULAR.TTF');
+}
+
+@font-face {
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "Cafe24Ssurround";
+}
+
+.logo {
+	font-family: "BUNGEESHADE";
+	font-size: 3rem;
+	width: max-content;
+}
+
+@media ( max-width : 990px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.header-area .main-header .main-menu ul li a {
+		padding: 39px !important;
+	}
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+.header-area .main-header .main-menu ul li a {
+	font-weight: 500 !important;
+	font-size: 19px !important;
+	padding: 25px 39px 10px 39px !important;
+}
+
+
+ul {
+	text-align: center;
+}
+
+.fa, .fal, .far, .fas {
+	display: block !important;
+	margin-block-end: 5px;
+}
+
+.logo:hover {
+	color: #ff8000;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+	.section-padding30 {
+		padding-top: 100px !important;
+	}
+}
+
+.section-padding30 {
+	padding-top: 100px !important;
+}
+
+.hero-area3 {
+	background-image: url(../img/sunset.jpg) !important;
+}
+
+.hero-overly2 {
+	background-color: rgba(0, 0, 50, 0.4) !important;
+}
+
+h2 {
+	font-family: "Cafe24Ssurround" !important;
+}
+
+.location-details>p {
+	padding: 20px !important;
+}
+
+.popular-location .single-location .location-details {
+	left: 0 !important;
+}
+
+.footer-copy-right {
+	text-align: left !important;
+}
+
+.footer-area .footer-social a {
+	display: inline-grid !important;
+	padding: 10px;
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+li.add-list {
+    z-index: 1 !important;
+}
+
+.row {
+	align-items: center;
+}
+
+h2 {
+	font-family: "Cafe24Ssurround" !important;
+	padding-bottom: 30px !important;
+}
+
+p {
+	font-family: "Cafe24SsurroundAir" !important;
+	color: #000000 !important;
+}
+
+img {
+	border-radius: 6px;
+}
+
+span {
+	text-align: center;
+	font-family: "Cafe24SsurroundAir" !important;
+	padding-top: 10px;
+}

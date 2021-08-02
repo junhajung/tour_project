@@ -1,0 +1,180 @@
+@font-face {
+	font-family: BUNGEESHADE;
+	src: url('../fonts/BUNGEESHADE-REGULAR.TTF');
+}
+
+@font-face {
+	font-family: 'Cafe24SsurroundAir';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Cafe24Ssurround';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "Cafe24SsurroundAir";
+}
+
+.header-area .main-header .main-menu ul li a {
+    font-family: 'Cafe24Ssurround' !important;
+}
+
+.logo {
+	font-family: "BUNGEESHADE";
+	font-size: 3rem;
+	width: max-content;
+}
+
+@media ( max-width : 990px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+li.add-list {
+    z-index: 1 !important;
+}
+
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.header-area .main-header .main-menu ul li a {
+		padding: 39px !important;
+	}
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+.header-area .main-header .main-menu ul li a {
+	font-weight: 500 !important;
+	font-size: 19px !important;
+	padding: 25px 39px 10px 39px !important;
+}
+
+.header-area {
+   background-color: #212529;
+}
+
+ul {
+	text-align: center;
+}
+
+.fa, .fal, .far, .fas {
+	display: block !important;
+	margin-block-end: 5px;
+}
+
+.logo:hover {
+	color: #ff8000;
+}
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px){
+.section-padding30 {
+    padding-top: 150px !important;
+}	
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.section-padding30 {
+    padding-top: 150px !important;
+
+}
+}
+
+.list-group-item:first-child {
+    color: #635c5c;
+}
+
+.list-group-item:last-child {
+    color: #635c5c;
+}
+
+h2, p {
+	font-family: "Cafe24Ssurround" !important;
+}
+
+.location-details>p {
+	padding: 20px !important;
+}
+
+.popular-location .single-location .location-details {
+	left: 0 !important;
+}
+
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+
+.row {
+	align-items: center;
+}
+
+h2 {
+	font-family: "Cafe24Ssurround" !important;
+}
+
+p {
+	font-family: "Cafe24SsurroundAir" !important;
+
+    margin: revert !important;
+
+}
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+	.section-padding2 {
+		padding-top: 20px !important;
+	}
+}
+
+h4 {
+	font-family: "Cafe24SsurroundAir" !important;
+}
+
+@media ( min-width : 768px) {
+	.col-md-5 {
+		padding: 50px !important;
+	}
+}
+
+span {
+	font-family: "Cafe24SsurroundAir" !important;
+	font-style: italic;
+	font-size: small;
+}
+
+.row {
+    display: -webkit-box !important;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.table {
+    text-align-last: center;
+    text-align: center;
+}
+
+.section-padding30 {
+    padding-top: 150px !important;
+}

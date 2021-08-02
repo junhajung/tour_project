@@ -1,0 +1,182 @@
+@font-face {
+	font-family: BUNGEESHADE;
+	src: url('../fonts/BUNGEESHADE-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: 'Cafe24SsurroundAir';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24SsurroundAir.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: "Cafe24SsurroundAir";
+}
+
+.header-area .main-header .main-menu ul li a {
+    font-family: 'Cafe24Ssurround' !important;
+}
+.logo {
+	font-family: "BUNGEESHADE";
+	font-size: 3rem;
+	width: max-content;
+}
+
+@media ( max-width : 990px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+li.add-list {
+    z-index: 1 !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.header-area .main-header .main-menu ul li a {
+		padding: 39px !important;
+	}
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+.header-area .main-header .main-menu ul li a {
+    font-weight: 500 !important;
+    font-size: 19px !important;
+    padding: 25px 39px 10px 39px !important;
+}
+
+
+ul {
+	text-align: center;
+}
+
+.fa, .fal, .far, .fas {
+    display: block !important;
+    margin-block-end: 5px;
+}
+
+.logo:hover {
+	color : #ff8000;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+	.section-padding30 {
+    padding-top: 100px !important;
+}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+	.section-padding2 {
+    padding-top: 100px !important;
+}
+}
+
+
+.section-padding30 {
+    padding-top: 100px !important;
+}
+
+.hero-area2 {
+    background-image: url(../img/independent.jpg) !important;
+}
+
+.hero-overly2 {
+
+    background-color: rgba(0, 0, 50, 0.4) !important;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) 
+{
+	.listing-details-area .single-listing .list-caption p {
+    padding-right: 0 !important; 
+ 	font-family: "Cafe24SsurroundAir" !important;
+}
+}
+
+p {
+	font-family: "Cafe24SsurroundAir" !important;
+	
+}
+h2 {
+	font-family: "Cafe24Ssurround" !important;
+	
+}
+
+.single-post-area .blog_details p {
+    color: slategrey;
+    font-family: 'Cafe24SsurroundAir';
+}
+
+.contact-info .media-body h3 {
+   
+	font-family: "Cafe24SsurroundAir";
+}
+
+.card-img {
+    height: 350px;
+}
+
+.contact-info .media-body h3 {
+    padding-top: 3px;
+}
+
+
+.footer-copy-right {
+	text-align: left !important;
+}
+
+.footer-area .footer-social a {
+    display: inline-grid !important;
+    padding: 10px;
+}
+
+.list {
+	font-family: "Cafe24SsurroundAir" !important;
+	text-align: inherit;
+}
+
+#btn {
+	border: 1px solid red;
+	background: transparent;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+}
+
+.CurrIcon {
+    float: right;
+    padding-right: 17px;
+}
+
+.CurrTemp {
+    float: right;
+}
+
+.btn {
+
+    font-family: "Cafe24SsurroundAir" !important;
+}
+
+.col-lg-12.offset-lg-0 input.form-control {
+   margin-top: 10px;
+}
+
+.blog_right_sidebar .widget_title {
+    margin-bottom: 20px !important;
+}
+
+input#btn {
+    font-family: 'Cafe24SsurroundAir' !important;
+}

@@ -1,0 +1,48 @@
+@font-face {
+	font-family: BUNGEESHADE;
+	src: url('../fonts/BUNGEESHADE-REGULAR.TTF');
+}
+
+@font-face {
+	font-family: 'ghanachoco';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ghanachoco.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	font-family: "ghanachoco";
+}
+
+.logo {
+	font-family: "BUNGEESHADE";
+	font-size: 5rem;
+	color: #01477a;
+}
+
+@media ( max-width : 575px) {
+	.logo {
+		font-size: 3rem;
+	}
+}
+
+.row {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+}
+
+.listing-details-area .single-listing .list-img img {
+    height: 300px !important;
+
+}
+
+.container {
+    word-break: keep-all;
+}
+
+li.add-list {
+    z-index: 1 !important;
+}
