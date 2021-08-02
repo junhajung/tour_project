@@ -30,7 +30,9 @@ public class UrlAspect {
 		String query = request.getQueryString(); // userid=aaaa
 			
 		//제거할 url정보
-		if(!path.startsWith("/user/login") && !path.startsWith("/user/logout")) {
+		if(!path.startsWith("/user/login") && !path.startsWith("/user/logout")
+				&& !path.startsWith("/tour_image") && !path.startsWith("/stay_image") && !path.startsWith("/activity_image")
+				&& !path.startsWith("/food_image") && !path.startsWith("/naver_image")) {
 			//세션에 url정보를 추가함.
 			if(query == null) {
 				System.out.println("aaa" + path);
