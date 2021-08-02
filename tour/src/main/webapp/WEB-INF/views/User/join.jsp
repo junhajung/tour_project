@@ -41,14 +41,12 @@
 		</div>
 		
 		<div class="row">
-		<div class="mb-3 col-4">
-			<input type="button" id="check" value="ID 중복체크">
-		</div>
-		
-		<div class="mb-3 col-8" id="idCheck">
+			<div class="mb-3 col-4">
+				<input type="button" id="check" value="ID 중복체크">
+			</div>
 			
-		</div>
-		
+			<div class="mb-3 col-8" id="idCheck">
+			</div>
 		</div>
 
 		<div class="mb-3">
@@ -60,15 +58,15 @@
 		</div>
 
 		<div class="mb-3">
-			<input type="email" class="form-control" name="email" placeholder="E-mail">
+			<input type="email" class="form-control" name="email" id="email" placeholder="E-mail">  
+		</div>
+			
+		<div class="mb-3">
+			<input type="text" class="form-control" name="username"  id="username" placeholder="Name">
 		</div>
 
 		<div class="mb-3">
-			<input type="text" class="form-control" name="username" placeholder="Name">
-		</div>
-
-		<div class="mb-3">
-			<input type="text" class="form-control" name="phone" placeholder="Phone Number">
+			<input type="text" class="form-control" name="phone" id="userphone" placeholder="Phone Number">
 		</div>
 
 		<div class="mb-3">
@@ -116,6 +114,28 @@
 					$('#userpw').focus();
 					return false;
 				}
+				if($.trim($('#email').val()) == '') {
+					alert("이메일을 입력해주세요.");
+					$('#email').focus();
+					return false;
+				}
+				
+				if($('#email').val().indexOf("@") == -1){
+					alert("올바른 이메일 형식이 아닙니다.")
+					$('#email').focus();
+					return false;
+				}
+				if($.trim($('#username').val()) == '') {
+					alert("이름을 입력해주세요.");
+					$('#username').focus();
+					return false;
+				}
+				
+				if($.trim($('#userphone').val()) == '') {
+					alert("번호를 입력해주세요.");
+					$('#userphone').focus();
+					return false;
+				}
 				
 				if(idx==false) {
 					alert("아이디 중복체크를 해주세요");
@@ -124,6 +144,7 @@
 					alert("회원가입에 성공했습니다");
 					$('#signFrm').submit();
 				}
+				
 			});
 			
 			$('#check').click(function(){
