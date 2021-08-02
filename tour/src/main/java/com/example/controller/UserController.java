@@ -495,9 +495,9 @@ public class UserController {
 		System.out.println(userid);
 		MyUsers users = uRepository.findByUserid(userid);
 		BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
-		if (user != null && bcpe.matches(userpw, users.getUserpw())) {
+		if (user != null) {
 			String id = user.getUsername();
-			if (id.equals(userid)) {
+			if (id.equals(userid) && bcpe.matches(userpw, users.getUserpw())) {
 				uRepository.deleteByUserid(id);					
 			httpSession.invalidate();
 			}
