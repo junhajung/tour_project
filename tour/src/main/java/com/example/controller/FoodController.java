@@ -22,6 +22,8 @@ import com.example.entity.Reply;
 import com.example.repository.FoodRepository;
 import com.example.repository.ReplyRepository;
 
+
+
 @Controller
 @RequestMapping(value = "/")
 public class FoodController {
