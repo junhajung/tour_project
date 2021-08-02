@@ -486,13 +486,16 @@ public class UserController {
 	public String deletePOST(HttpSession httpSession,
 			HttpServletResponse response,
 			Authentication auth, @ModelAttribute MyUsers vo,
-			@RequestParam(value = "userid") String userid) throws IOException {
+			@RequestParam(value = "userid") String userid,
+			@RequestParam(value = "userpw") String userpw) throws IOException {
 		
 		// 스프링 security core 내장 객체 User와 같은 이름의 entity가 있어서 MyUsers로 entity 이름 바꿈
 		User user = (User) auth.getPrincipal();
 		System.out.println(user.getUsername());
 		System.out.println(userid);
-		if (user != null) {
+		MyUsers users = uRepository.findByUserid(userid);
+		BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
+		if (user != null && bcpe.matches(userpw, users.getUserpw())) {
 			String id = user.getUsername();
 			if (id.equals(userid)) {
 				uRepository.deleteByUserid(id);					
