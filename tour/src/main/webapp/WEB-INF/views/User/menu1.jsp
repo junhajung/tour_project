@@ -25,6 +25,9 @@
 
 		<p>ENTER YOUR NAME</p>
 		<input type="text" name="username" value="${vo.username}" class="form-control">
+		
+		<p>ENTER YOUR PHONE</p>
+		<input type="text" name="phone" value="${vo.phone}" class="form-control">
 
 
 		<p>ENTER YOUR E-MAIL</p>

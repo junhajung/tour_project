@@ -249,8 +249,13 @@ public class UserController {
 
 	@RequestMapping(value = "/myinfo", method = { RequestMethod.POST })
 	public String myinfoPOST(@ModelAttribute MyUsers vo,
+			HttpServletResponse response,
+			HttpSession httpSession,
 			@RequestParam(value = "oldpw") String oldpw,
-			@RequestParam(value = "userid") String userid) {
+			@RequestParam(value = "email") String email,
+			@RequestParam(value = "phone") String phone,
+			@RequestParam(value = "username") String username,
+			@RequestParam(value = "userid") String userid) throws IOException {
 		BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
 		
 		MyUsers user = uRepository.findByUserid(userid);
@@ -259,13 +264,37 @@ public class UserController {
 			String changePw = bcpe.encode(vo.getUserpw());
 			
 			user.setUserpw(changePw);
+			user.setEmail(email);
+			user.setUsername(username);
+			user.setPhone(phone);
 			
 			uRepository.save(user);
-				
+			
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			httpSession.invalidate();
+			out.println("<script>alert('비밀번호 변경 완료, 다시 로그인 해주세요.'); location.href='http://127.0.0.1:9099/ROOT/home'</script>");
+			out.flush();
+		}
+		else if (oldpw.equals("")) {
+			user.setEmail(email);
+			user.setUsername(username);
+			user.setPhone(phone);
+			
+			uRepository.save(user);
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('회원정보 변경 완료!'); location.href='http://127.0.0.1:9099/ROOT/user/myinfo?menu=1'</script>");
+			out.flush();
 		}
 		else{
-			System.out.println("붊일치");
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>alert('현재 비밀번호가 틀립니다.'); location.href='http://127.0.0.1:9099/ROOT/user/myinfo?menu=1'</script>");
+			out.flush();
 		}
+		
+		
 
 		// 페이지 이동
 		return "redirect:/user/myinfo?menu=1";
@@ -499,7 +528,7 @@ public class UserController {
 			String id = user.getUsername();
 			if (id.equals(userid) && bcpe.matches(userpw, users.getUserpw())) {
 				uRepository.deleteByUserid(id);					
-			httpSession.invalidate();
+				httpSession.invalidate();
 			}
 			else {
 				response.setContentType("text/html; charset=UTF-8");
