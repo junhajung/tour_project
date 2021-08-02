@@ -11,12 +11,11 @@ import com.example.repository.UserRepository;
 public class JoinServiceImpl implements JoinService {
 
 	@Autowired
-	UserRepository userR;
+	UserRepository uRepository;
 
 	@Override
 	public int idCheck(String userid) {
-
-		int result = userR.countByUseridIgnoreCaseContaining(userid);
+		int result = uRepository.countByUserid(userid);
 		return result;
 	}
 
@@ -27,7 +26,7 @@ public class JoinServiceImpl implements JoinService {
 		BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 		user.setUserpw(pwEncoder.encode(user.getUserpw()));
 		System.out.println("JoinService after : " + user.getUserpw());
-		userR.save(user);
+		uRepository.save(user);
 
 	}
 
