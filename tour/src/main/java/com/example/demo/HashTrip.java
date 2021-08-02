@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @SpringBootApplication
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})  //mongodb만 사용시 datasource 설정 부분
 @EnableMongoRepositories(basePackages = "com.example.repository")
-@ComponentScan({"com.example.controller", "com.example.security"})
+@ComponentScan({"com.example.controller", "com.example.security", "com.example.aop"})
 @EntityScan({"com.example.entity"})
 
 public class HashTrip extends SpringBootServletInitializer{

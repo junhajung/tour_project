@@ -57,13 +57,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.usernameParameter("userid") // name="userid"
 			.passwordParameter("userpw")
 			.permitAll()
-			.successHandler(new LoginSuccessHandler("/"))
+			.successHandler(new LoginSuccessHandler())
 			.and()
 
 		//로그아웃 환경설정
 		.logout()
 			.logoutUrl("/user/logout")
-			.logoutSuccessUrl("/main")
+			.logoutSuccessUrl("/")
 			.invalidateHttpSession(true) // 세션삭제
 			.clearAuthentication(true) //인증내용 지우기
 			.permitAll() //로그인하지 않아도 접근 가능한 페이지

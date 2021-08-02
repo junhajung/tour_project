@@ -67,6 +67,9 @@ public class UserController {
 		return "User/login";
 	}
 
+
+	
+	
 	@RequestMapping(value = "/joinget")
 	public String joinGET() {
 		return "User/join";

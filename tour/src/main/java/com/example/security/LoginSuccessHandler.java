@@ -14,24 +14,19 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
-public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
-
-	public LoginSuccessHandler(String defaultTargetUrl) {
-		this.setDefaultTargetUrl(defaultTargetUrl);
-	}
-
+public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
+	
 	@Override
-	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+	public void onAuthenticationSuccess(
+			HttpServletRequest request, 
+			HttpServletResponse response,
 			Authentication authentication) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		if (session != null) {
-				String url = request.getContextPath() ;
-				response.sendRedirect(url);
-//				getRedirectStrategy().sendRedirect(request, response, redirectUrl);
-		} else {
-			super.onAuthenticationSuccess(request, response, authentication);
-		}
-
+		
+		HttpSession httpSession = request.getSession();
+		String url = request.getContextPath() + "/";
+		String backUrl = (String)httpSession.getAttribute("CURRENT_URL");
+		url = request.getContextPath() + backUrl;
+		response.sendRedirect(url);
 	}
 	
 }
