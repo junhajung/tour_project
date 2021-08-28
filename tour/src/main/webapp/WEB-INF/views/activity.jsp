@@ -37,14 +37,15 @@
 
 </style>
 		
-		
-		
-		
-
-	<script>
+<script>
 	var start = false; // on, off
 	var check = false; // start check
+	
+	// javascript로 현재 페이지의 url을 가져오는 것 (document.location.href)
+	
+	// url에서 파라미터 값만 가져옴 (?start= 뒤에 있는 값을 가져옴)
 	var url = document.location.href.split('?start=');
+	
 	if(url[1]){
 	   start = true;
 	   check = true;

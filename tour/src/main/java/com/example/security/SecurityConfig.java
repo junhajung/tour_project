@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
@@ -22,10 +23,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	// 암호화를 위한 객체 생성
 	// 환경설정에서는 @Bean을 이용하여 객체를 생성함
 	// BCryptPasswordEncoder bcpe = new BCryptPasswordEncoder();
+	
+	
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		
 		return new BCryptPasswordEncoder();
 	}
+
 
 	//암호화 적용
 	@Autowired
@@ -73,6 +78,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.exceptionHandling()
 			.accessDeniedPage("/page403") //접근불가 페이지면 /ROOT/page403으로 이동
 			.and();
+		
+		
 		 
 
 		http.csrf().disable();

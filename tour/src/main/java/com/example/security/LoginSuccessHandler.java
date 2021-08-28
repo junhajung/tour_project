@@ -22,6 +22,7 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
 			HttpServletResponse response,
 			Authentication authentication) throws ServletException, IOException {
 		
+		
 		HttpSession httpSession = request.getSession();
 		String url = request.getContextPath() + "/";
 		String backUrl = (String)httpSession.getAttribute("CURRENT_URL");

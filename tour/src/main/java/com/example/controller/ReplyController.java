@@ -93,7 +93,7 @@ public class ReplyController {
 		}
 	}
 	
-	//본인 댓글 삭제 구현 
+	//본인 댓글 수정 구현 
 	@RequestMapping(value = "/reply_update")
 	public String reply_update(Model model, 
 			@ModelAttribute Reply reply,
@@ -112,9 +112,17 @@ public class ReplyController {
 			return "redirect:/tour_details?name=" + URLEncoder.encode(name, "UTF-8");
 		}
 		else if(fRepository.findByName(name) != null) {
+			Query query = new Query(new Criteria("_id").is(id).and("userid").is(userid));
+			Update update = new Update();
+			update.set("reply", update_reply);
+			mTemplate.upsert(query, update, reply.getClass());
 			return "redirect:/food_details?name=" + URLEncoder.encode(name, "UTF-8");	
 		}
 		else {
+			Query query = new Query(new Criteria("_id").is(id).and("userid").is(userid));
+			Update update = new Update();
+			update.set("reply", update_reply);
+			mTemplate.upsert(query, update, reply.getClass());
 			return "redirect:/stay_details?name=" + URLEncoder.encode(name, "UTF-8");
 		}
 		

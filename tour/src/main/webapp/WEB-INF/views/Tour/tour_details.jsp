@@ -615,22 +615,22 @@
 
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
-		<script>
-			$(function(){
-				$('.1').click(function(){
-					$('.3').show(); $('.2').hide(); $('.4').show(); $('.1').hide();
-				});
-				$('.2').click(function(){
-					$('.3').hide(); $('.1').show(); $('.4').hide(); $('.1').show();
-				});
+	<script>
+		$(function(){
+			$('.first_update').click(function(){
+				$('.my_reply').show(); $('.reply_list').hide(); $('.db_update').show(); $('.first_update').hide();
 			});
-		</script> 
-		
-		<script>
-			$(document).ready(function(){
-				$(".2").trigger("click");
+			$('.reply_list').click(function(){
+				$('.my_reply').hide(); $('.db_update').hide(); $('.first_update').show();
 			});
-		</script>
+		});
+	</script> 
+	
+	<script>
+		$(document).ready(function(){
+			$(".reply_list").trigger("click");
+		});
+	</script>
 		
 
 
@@ -701,54 +701,55 @@
                                             	
                                          
                                         <c:forEach var="list" items="${replylist}">
-	                                         <div class="input-group mb-3">
-	                                         	<div class="2">
-		                                         	내용 : ${list.reply} <br/>
-		                                         	
-		                                         	작성자 : ${list.userid} <br/>
-		                                         	
-		                                         	작성시간 : <fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm"/>
-	                                            </div>
-	                                           <form action="${pageContext.request.contextPath}/reply/reply_update" method="post" id="reply_update"> 	  	
-                                             	<div class="3">
-	                                              	<security:authorize access="isAuthenticated()">
-	                                              		<security:authorize access="hasAuthority('user')">
-			                                              <security:authentication property="principal.username" var="user_id"/>
-			                                              	 <c:if test="${user_id eq list.userid}" >
-			                                              	
-					                                         	내용 : <input type="text" value="${list.reply}" name="update_reply" > 
-					                                         	<input type="hidden" value="${list.id}" name="id">
-					                                         	<input type="hidden" value="${list.name}" name="name">
-					                                         	<br/>
-					                                        
-					                                         	작성자 : ${list.userid}
-					                                         	<br/>
-					                                         	작성시간 : <fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm"/>
-					                                         </c:if>
-				                                         </security:authorize>
-				                                    </security:authorize>
-                                             	</div>
-	                                         	
-	                                         	<div style="float:right;">
-	                                             	<security:authorize access="isAuthenticated()">
-	                                             		<security:authorize access="hasAuthority('user')">
-				                                             <security:authentication property="principal.username" var="user_id"/>
-				                                              <c:if test="${user_id eq list.userid}" >
-				                                               	<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}" style="color:black;">삭제</a>
-				                                               	<a href="javascript:void(0);" style="color:black;" class="1">수정</a>
-				                                               	<input type="submit" value="수정" class="4" style="color:black; background-color:transparent;  border:0px transparent solid; cursor: pointer;">
-				                                              </c:if>
-				                                       </security:authorize>
-	                                               
-		                                               <security:authorize access="hasAuthority('admin')">
-		                                               		<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}" style="color:black; ">삭제</a>
-		                                               </security:authorize>
-	                                            	</security:authorize>
-	                                           	</div>
-	                                           	
-	                                           	</form>
-	                                         </div>
-                                        </c:forEach>
+										   <div class="input-group mb-3">
+										
+										   	  <div class="reply_list">
+											     	내용 : ${list.reply} <br/>
+											     	작성자 : ${list.userid} <br/>	
+											     	작성시간 : <fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm"/>
+										      </div>
+										
+											     <form action="${pageContext.request.contextPath}/reply/reply_update" method="post" id="reply_update"> 	  	
+											     	<div class="my_reply">
+											        	<security:authorize access="isAuthenticated()">
+											        		<security:authorize access="hasAuthority('user')">
+											            <security:authentication property="principal.username" var="user_id"/>
+											            	 <c:if test="${user_id eq list.userid}" >
+											            	
+														           	내용 : <input type="text" value="${list.reply}" name="update_reply" > 
+														           	<input type="hidden" value="${list.id}" name="id">
+														           	<input type="hidden" value="${list.name}" name="name">
+														           	<br/>
+														          
+														           	작성자 : ${list.userid}
+														           	<br/>
+														           	작성시간 : <fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm"/>
+													           </c:if>
+												         </security:authorize>
+															   </security:authorize>
+											     	</div>
+											   	
+											   	<div style="float:right;">
+											       	<security:authorize access="isAuthenticated()">
+										
+											       		 <security:authorize access="hasAuthority('user')">
+											             <security:authentication property="principal.username" var="user_id"/>
+											              <c:if test="${user_id eq list.userid}" >
+											               	<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}" style="color:black;">삭제</a>
+											               	<a href="javascript:void(0);" style="color:black;" class="first_update">수정</a>
+											               	<input type="submit" value="수정" class="db_update" style="color:black; background-color:transparent;  border:0px transparent solid; cursor: pointer;">
+											              </c:if>
+												         </security:authorize>
+											         
+											           <security:authorize access="hasAuthority('admin')">
+											           		<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}" style="color:black; ">삭제</a>
+											           </security:authorize>
+										
+											      	</security:authorize>
+											     	</div>
+												  </form>
+										   </div>
+										</c:forEach>
                                         
                                          
                                          

@@ -500,10 +500,8 @@
 							<form action="${pageContext.request.contextPath}/search">
 								<div class="form-group">
 									<div class="input-group mb-3">
-										<input type="hidden" value="all" name="type"> <input
-											type="text" class="form-control" name="text"
-											placeholder='Search Keyword' onfocus="this.placeholder = ''"
-											onblur="this.placeholder = 'Search Keyword'">
+										<input type="hidden" value="all" name="type"> 
+										<input type="text" class="form-control" name="text" placeholder='Search Keyword' onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
 										<div class="input-group-append">
 											<button class="btns" value="Search" type="submit">
 												<i class="ti-search"></i>
@@ -512,9 +510,7 @@
 									</div>
 								</div>
 
-								<button
-									class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-									type="submit" value="Search">Search</button>
+								<button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" value="Search">Search</button>
 							</form>
 						</aside>
 
@@ -525,13 +521,7 @@
 					<div class="blog_right_sidebar">
 						<aside class="single_sidebar_widget search_widget">
 							<h4 class="widget_title">Comments ( ${cntReply} )</h4>
-							<form
-								action="${pageContext.request.contextPath}/stay_details?name=${staylist.name}"
-								method="post">
-								<input type="hidden" name="${_csrf.parameterName}"
-									value="${_csrf.token}">
-
-
+								<form action="${pageContext.request.contextPath}/stay_details?name=${staylist.name}" method="post">
 								<div class="form-group">
 									<security:authorize access="isAuthenticated()">
 										<security:authorize access="hasAuthority('user')">
@@ -539,9 +529,7 @@
 												<textarea class="form-control" name="reply" id="reply"
 													rows="3" cols="1" placeholder='댓글을 입력하세요.'></textarea>
 												<div class="input-group-append">
-													<button
-														class="button rounded-0 primary-bg text-white w-100 btn_1"
-														id="button" type="submit">등록</button>
+													<button class="button rounded-0 primary-bg text-white w-100 btn_1" id="button" type="submit">등록</button>
 												</div>
 											</div>
 										</security:authorize>
@@ -550,12 +538,9 @@
 									<security:authorize access="isAuthenticated()">
 										<security:authorize access="hasAuthority('admin')">
 											<div class="input-group mb-3">
-												<textarea class="form-control" name="reply" id="reply"
-													rows="3" cols="1" placeholder='관리자는 댓글 사용이 불가합니다' readonly></textarea>
+												<textarea class="form-control" name="reply" id="reply" rows="3" cols="1" placeholder='관리자는 댓글 사용이 불가합니다' readonly></textarea>
 												<div class="input-group-append">
-													<button
-														class="button rounded-0 primary-bg text-white w-100 btn_1"
-														id="button" type="submit">등록</button>
+													<button class="button rounded-0 primary-bg text-white w-100 btn_1" id="button" type="submit">등록</button>
 												</div>
 											</div>
 										</security:authorize>
@@ -563,41 +548,31 @@
 
 									<security:authorize access="!isAuthenticated()">
 										<div class="input-group mb-3">
-											<textarea class="form-control" name="reply" id="reply"
-												rows="3" cols="1" placeholder='댓글을 입력하세요.'></textarea>
+											<textarea class="form-control" name="reply" id="reply" rows="3" cols="1" placeholder='댓글을 입력하세요.'></textarea>
 											<div class="input-group-append">
-												<button
-													class="button rounded-0 primary-bg text-white w-100 btn_1"
-													id="button" type="submit">등록</button>
+												<button class="button rounded-0 primary-bg text-white w-100 btn_1" id="button" type="submit">등록</button>
 											</div>
 										</div>
 									</security:authorize>
 
 									<c:forEach var="list" items="${replylist}">
 										<div class="input-group mb-3">
-
 											내용 : ${list.reply} 
 											<br /> 
 											작성자 : ${list.userid}
 											<div class="time hidden-xs">
-											작성시간 :
-											<fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm" />
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+												작성시간 : <fmt:formatDate value="${list.createdDate}" pattern="yyyy/MM/dd HH:mm" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												<div style="float: right;">
-
 													<security:authorize access="isAuthenticated()">
 														<security:authorize access="hasAuthority('user')">
 															<security:authentication property="principal.username" var="user_id" />
 															<c:if test="${user_id eq list.userid}">
-																<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}"
-																	style="color: black;">삭제</a>
+																<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}"	style="color: black;">삭제</a>
 															</c:if>
 														</security:authorize>
 
 														<security:authorize access="hasAuthority('admin')">
-															<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}"
-																style="color: black;">삭제</a>
+															<a href="${pageContext.request.contextPath}/reply/reply_delete?id=${list.id}&name=${list.name}" style="color: black;">삭제</a>
 														</security:authorize>
 													</security:authorize>
 												</div>

@@ -51,6 +51,7 @@ public class StayController {
 	}
 
 	
+	// stay 댓글 달기
 	@RequestMapping(value="/stay_details")
 	public String staydetailGET(Model model, @RequestParam(value="name") String name) {
 		Stay staylist = sRepository.findByName(name);
