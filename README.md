@@ -20,8 +20,7 @@ Java, JavaScript, Jsp, Html, css, Jpa
 
 * Apache Tomcat Version - 9.0
 * Java Version - 11.0.10
-* Eclipse Version -
-![image](https://user-images.githubusercontent.com/48474613/132295064-de204dd6-cf4c-4907-b860-3852aa1ef4d1.png)
+* Eclipse Version - 4.18.0
 * Spring Version - 2.4.4
 
 * * *
