@@ -2,7 +2,8 @@
 
 ## 간단한 프로젝트 설명
 
-충남 관광 웹 사이트 프로젝트입니다.
+충남 관광 웹 사이트 프로젝트이며 Nosql인 MonogoDB와 Spring FrameWork를 활용하였습니다.
+
 ### 사용언어
 Java, JavaScript, Jsp, Html, Css, JPA 
 
