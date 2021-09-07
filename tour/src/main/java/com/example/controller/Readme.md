@@ -232,7 +232,8 @@
 var url = document.location.href.split('?start=');  
 
 변수 url에 값을 담음.  
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2e6e3649-9bab-4964-9afc-9180a423b57e/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/48474613/132306834-1bd4da4c-edf9-4fed-8572-d91dd047af81.png)
+
 url[1] = true 이면 start와 check의 값은 true 아니면 false이다.
 
 기능 종료시 history.replaceState({}, null, location.pathname); 를 실행하여 url 파라미터 값을 지움.
