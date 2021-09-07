@@ -237,3 +237,4 @@ var url = document.location.href.split('?start=');
 url[1] = true 이면 start와 check의 값은 true 아니면 false이다.
 
 기능 종료시 history.replaceState({}, null, location.pathname); 를 실행하여 url 파라미터 값을 지움.
+
