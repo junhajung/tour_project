@@ -12,7 +12,12 @@ F2 : 기능 시작/종료
 q : 하위 설명에 대해 다음 내용 출력  
 w : 하위 설명에 대해 이전 내용으로 돌아가서 출력  
 
-[음성 Readme 설명](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/controller/Readme.md)
+## 프로젝트 설명 Readme 보러가기
+* [음성 Readme 설명](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/controller/Readme.md)
+* [Security 설정](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/security/Readme.md)
+* [댓글 업데이트 및 설정](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/controller/%EB%8C%93%EA%B8%80Readme.md)
+* [세션 처리](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/aop/Readme.md)
+
 
 ## 개발기간 및 인력
 
