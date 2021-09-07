@@ -12,6 +12,8 @@ F2 : 기능 시작/종료
 q : 하위 설명에 대해 다음 내용 출력  
 w : 하위 설명에 대해 이전 내용으로 돌아가서 출력  
 
+[음성 Readme 설명](https://github.com/junhajung/tour_project/blob/main/tour/src/main/java/com/example/controller/Readme.md)
+
 ## 개발기간 및 인력
 
 약 한달 소요, 3인 프로젝트
