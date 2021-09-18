@@ -25,9 +25,7 @@ public class JoinServiceImpl implements JoinService {
 		// 비밀번호 암호화
 		BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 		user.setUserpw(pwEncoder.encode(user.getUserpw()));
-		System.out.println("JoinService after : " + user.getUserpw());
 		uRepository.save(user);
-
 	}
 
 }

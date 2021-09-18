@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+// 로그인이 성공했을 때 Authentication(인증) 후, session 페이지 처리
 public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
 	
 	@Override
@@ -21,7 +22,6 @@ public class LoginSuccessHandler  implements AuthenticationSuccessHandler {
 			HttpServletRequest request, 
 			HttpServletResponse response,
 			Authentication authentication) throws ServletException, IOException {
-		
 		
 		HttpSession httpSession = request.getSession();
 		String url = request.getContextPath() + "/";

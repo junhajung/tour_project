@@ -35,11 +35,9 @@ public class UrlAspect {
 				&& !path.startsWith("/food_image") && !path.startsWith("/naver_image")) {
 			//세션에 url정보를 추가함.
 			if(query == null) {
-				System.out.println("aaa" + path);
 				httpSession.setAttribute("CURRENT_URL", path);
 			}
 			else {
-				System.out.println("bbbb" + path + "?" + query);
 				httpSession.setAttribute("CURRENT_URL", path + "?" + query);
 			}
 			

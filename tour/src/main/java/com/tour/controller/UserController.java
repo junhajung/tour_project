@@ -299,7 +299,6 @@ public class UserController {
 	
 	@RequestMapping(value = "/content_list")
 	public String content_list(Model model) {
-
 		return "Admin/content_list";
 	}
 

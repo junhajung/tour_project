@@ -27,7 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Bean
 	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		
 		return new BCryptPasswordEncoder();
 	}
 
@@ -79,9 +78,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.accessDeniedPage("/page403") //접근불가 페이지면 /ROOT/page403으로 이동
 			.and();
 		
-		
-		 
-
 		http.csrf().disable();
 		// iframe 속성을 .disable()로 지정하니 iframe 속성 지정한 맵이 다시 뜸.
 		http.headers().frameOptions().disable();
